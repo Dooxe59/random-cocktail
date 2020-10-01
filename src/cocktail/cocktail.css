@@ -1,0 +1,23 @@
+.ant-layout {
+  align-items: center;
+  width: 100%;
+}
+
+.ant-layout-header {
+  width: 100%;
+}
+
+.ant-layout-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cocktail-image {
+  display: flex;
+  justify-content: center;
+}
+
+.cocktail-card {
+  width: 50%;
+}
