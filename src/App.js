@@ -5,9 +5,9 @@ import "./App.css";
 
 import Cocktail from "./cocktail/Cocktail";
 
-import { Layout } from "antd";
+import { Layout, Button } from "antd";
 
-const { Header, Content } = Layout;
+const { Header, Footer, Content } = Layout;
 
 const App = () => {
   const [cocktail, setCocktail] = useState(null);
@@ -38,7 +38,11 @@ const App = () => {
             <Cocktail cocktail={cocktail}></Cocktail>
           </Content>
         </Layout>
-        {/* <Footer>footer</Footer> */}
+        <Footer>
+          <Button type="dashed" shape="round" onClick={() => loadCocktail()}>
+            Another !
+          </Button>
+        </Footer>
       </Layout>
     </>
   );
