@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import { Card, Image, Tag, List, Divider } from "antd";
 
@@ -73,10 +72,6 @@ const Cocktail = ({ cocktail }) => {
       </Card>
     </>
   );
-};
-
-Cocktail.propTypes = {
-  cocktail: PropTypes.object.isRequired,
 };
 
 export default Cocktail;

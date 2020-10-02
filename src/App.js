@@ -11,21 +11,26 @@ const { Header, Footer, Content } = Layout;
 
 const App = () => {
   const [cocktail, setCocktail] = useState(null);
+  const [loadCocktailStatus, setLoadCocktailStatus] = useState("success");
 
   useEffect(() => {
     loadCocktail();
   }, []);
 
   const loadCocktail = () => {
+    setLoadCocktailStatus("loading");
     axios
       .get(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
       .then((data) => {
         setCocktail(data.data);
+        setLoadCocktailStatus("success");
       })
       .catch((err) => {
         console.error(err);
       });
   };
+
+  const isDisabledLoadCocktailButton = () => loadCocktailStatus === "loading";
 
   return (
     <>
@@ -39,7 +44,12 @@ const App = () => {
           </Content>
         </Layout>
         <Footer>
-          <Button type="dashed" shape="round" onClick={() => loadCocktail()}>
+          <Button
+            type="dashed"
+            shape="round"
+            disabled={isDisabledLoadCocktailButton()}
+            onClick={() => loadCocktail()}
+          >
             Another !
           </Button>
         </Footer>
